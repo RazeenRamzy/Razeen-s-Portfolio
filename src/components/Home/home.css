@@ -130,20 +130,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0em;
-  margin: 0 auto; 
+  margin: -1em auto;
 }
 
 .myAvtar img {
-  width: 2500px;
-  height: 450px; 
+  width: 130%;
+  max-width: 400px;
+  height: 70%;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-@media (max-width: 967px) {
-  .myAvtar img {
-    width: 150px; /* Adjust the width for smaller screens */
-    height: 150px; /* Adjust the height for smaller screens */
-  }
+.myAvtar img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -163,12 +164,12 @@
 
 .home-about-body {
   padding-top: 20px;
-  font-size: 1.3em;
+  font-size: 1.1em;
   text-align: left;
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
-  color: #686666;
+  color: #555454;
 }
 
 .primary-header {
@@ -178,13 +179,12 @@
 }
 
 
-
-
 .home-about-social {
   text-align: center !important;
   padding-top: 25px;
   color: var(--clr-txt) !important;
 }
+
 
 .home-about-social-links {
   justify-content: center !important;
@@ -207,6 +207,7 @@
   border-radius: 50% !important;
   transition: 0.5s !important;
 }
+
 
 .home-social-icons::before {
   content: "";
@@ -243,4 +244,11 @@
 .icon-colour {
   color: var(--clr-primary) !important;
 }
+
+
+
+
+
+
+
 

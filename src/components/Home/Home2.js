@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/bk-img4.png";
-import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -12,21 +11,26 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
   return (
-    <Container fluid className="home-about-section" id="about">
-      <Container>
-        <Row>
-          <Col md={8} className="home-about-description">
-          <h1 style={{ fontSize: "2.6em" }} data-aos="fade-right">
-              <span className="primary-header"> MAKING MAGIC WITH CODE </span>
+    <Container fluid className="home2-container" id="about">
+      <Row className="home2-row">
+        <Col md={6} className="home2-image-col">
+          <img
+            src={myImg}
+            className="img-fluid home2-image"
+            alt="avatar"
+          />
+        </Col>
+        <Col md={6} className="home2-content-col">
+          <div className="home2-content" data-aos="fade-right">
+            <h1 className="home2-header">
+              <span className="primary-header">MAKING MAGIC WITH CODE</span>
             </h1>
-            <p className="home-about-body" data-aos="fade-up">
+            <p className="home2-body">
+              Hi there! I'm a{" "}
+              <i className="primary-header">Software Engineer</i> who's all about making the impossible, possible.
               <br />
-              Hi there! I'm a <i className="primary-header">
-                Software Engineer 
-              </i>{" "}
-               who's all about making the impossible, possible.
-              <br />
-              <br />I thrive on challenges, and there's nothing I love more than diving into the latest <i className="primary-header">tech innovations</i> to create something extraordinary.
+              <br />I thrive on challenges, and there's nothing I love more than diving into the latest{" "}
+              <i className="primary-header">tech innovations</i> to create something extraordinary.
               <br />
               <br />From crafting elegant websites to building robust applications, I'm your go-to person for turning dreams into digital realities.
               <br />
@@ -35,30 +39,25 @@ function Home2() {
               <br />
               Always upping my game, I'm on a mission to push boundaries, innovate relentlessly, and sprinkle a little magic wherever I go.
             </p>
-
-          </Col>
-          <Col md={4} className="myAvtar">
-              <img
-                data-aos="fade-left"
-                src={myImg}
-                className="img-fluid"
-                alt="avatar"
-              />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12} className="home-about-social">
-            <h1 data-aos="fade-right">
-              <span className="primary-header">CONNECT </span> WITH ME
+          </div>
+        </Col>
+      </Row>
+      <Row className="home2-social-row">
+        <Col md={12} className="home2-social-col">
+          <div className="home2-social-content">
+            <h1 className="home2-social-header" data-aos="fade-right">
+              <span className="primary-header">CONNECT</span> WITH ME
             </h1>
-            <p data-aos="fade-left">Feel free to connect with me</p>
-            <ul className="home-about-social-links" data-aos="fade-up">
+            <p className="home2-social-body" data-aos="fade-left">
+              Feel free to connect with me
+            </p>
+            <ul className="home2-social-links" data-aos="fade-up">
               <li className="social-icons">
                 <a
                   href="https://github.com/Rahuljha4171"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home2-social-icon"
                   aria-label="github"
                 >
                   <AiFillGithub />
@@ -69,7 +68,7 @@ function Home2() {
                   href="https://twitter.com/kumardotexe"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home2-social-icon"
                   aria-label="twitter"
                 >
                   <AiOutlineTwitter />
@@ -80,7 +79,7 @@ function Home2() {
                   href="mailto:razeenramzy555@gmail.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home2-social-icon"
                   aria-label="email"
                 >
                   <AiOutlineMail />
@@ -91,7 +90,7 @@ function Home2() {
                   href="https://www.linkedin.com/in/razeen-ramzy-7b386121b"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home2-social-icon"
                   aria-label="linkedin"
                 >
                   <FaLinkedinIn />
@@ -102,17 +101,18 @@ function Home2() {
                   href="https://www.instagram.com/dead.programmer/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour home2-social-icon"
                   aria-label="instagram"
                 >
                   <AiFillInstagram />
                 </a>
               </li>
             </ul>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 }
+
 export default Home2;

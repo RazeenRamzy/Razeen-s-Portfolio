@@ -4,6 +4,7 @@ import homeIcon from "../../Assets/home1.gif";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 import Home2 from "./Home2";
+import About from "../About/About";
 import Type from "./Type";
 import "./home.css";
 
@@ -43,6 +44,7 @@ function Home() {
         </Container>
       </Container>
       <Home2 />
+      <About/>
       <ScrollToTop />
     </section>
   );

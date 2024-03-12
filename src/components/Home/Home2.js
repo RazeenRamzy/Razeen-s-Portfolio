@@ -18,7 +18,7 @@ function Home2() {
       
           <Col md={8} className="home-about-description">
           <h1 style={{ fontSize: "2.6em" }} data-aos="fade-right">
-              <span className="primary-header"> MAKING MAGIC WITH CODE </span>
+              <span className="primary-header"> About Me </span>
             </h1>
             <p className="home-about-body" data-aos="fade-up">
               <br />
@@ -47,71 +47,7 @@ function Home2() {
               />
           </Col>
         </Row>
-        <Row>
-          <Col md={12} className="home-about-social">
-            <h1 data-aos="fade-right">
-              <span className="primary-header">CONNECT </span> WITH ME
-            </h1>
-            <p data-aos="fade-left">Feel free to connect with me</p>
-            <ul className="home-about-social-links" data-aos="fade-up">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/Rahuljha4171"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                  aria-label="github"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://twitter.com/kumardotexe"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                  aria-label="twitter"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="mailto:razeenramzy555@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                  aria-label="email"
-                >
-                  <AiOutlineMail />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/razeen-ramzy-7b386121b"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                  aria-label="linkedin"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/dead.programmer/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                  aria-label="instagram"
-                >
-                  <AiFillInstagram />
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
+      
       </Container>
     </Container>
   );

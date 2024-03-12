@@ -18,32 +18,21 @@ function About() {
             md={7}
             style={{
               justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "50px",
+              paddingTop: "10px",
+              paddingBottom: "10px",
             }}
           >
             <h1
-              style={{ fontSize: "2.1em", paddingBottom: "20px" }}
+              style={{ fontSize: "2.1em", paddingBottom: "10px" }}
               data-aos="fade-right"
             >
-              <span className="primary-header">Who</span> I'M
+              <span className="primary-header">What</span> I DO
             </h1>
             <div data-aos="fade-up">
               <Aboutcard />
             </div>
           </Col>
-          <Col
-            md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
-            className="about-img"
-          >
-            <img
-              src={laptopImg}
-              alt="about"
-              className="img-fluid"
-              data-aos="fade-left"
-            />
-          </Col>
+          
         </Row>
         <h1 data-aos="fade-right">
           <span className="primary-header">Skillset</span> I Work With

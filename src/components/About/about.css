@@ -1,3 +1,7 @@
+
+
+
+
 .about-section {
   position: relative !important;
   padding-top: 50px !important;
@@ -21,12 +25,7 @@
   overflow: hidden !important;
   transition: all 0.4s ease 0s !important;
 }
-.quote-card-view {
-  background: transparent !important;
-  border: none !important;
-  color: var(--clr-txt) !important;
-  box-shadow: var(--shadow);
-}
+
 .gitContainer {
   padding: 15px;
   background: transparent !important;
@@ -60,11 +59,70 @@
   padding-left: 1px !important;
 }
 
-@media (max-width: 767px) {
-  .about-img {
-    padding-top: 0 !important;
-  }
-}
 .git {
   color: var(--clr-primary);
+}
+
+.custom-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 0px;
+  justify-content: center;
+  padding: 10px;
+  max-width: 100%;
+  margin-left: 10px; /* Update margin to 0 */
+  margin-right: 30px;
+}
+
+@media (min-width: 10px) {
+  .custom-card-container {
+    grid-template-columns: repeat(4, 1fr); /* Ensure 3 cards in a row on larger screens */
+  }
+}
+
+.custom-card {
+  text-align: center;
+  width: 280px;
+  height: 380px;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #3498db;
+  border-radius: 15px;
+  background-color: #ecf0f1;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05) rotate(3deg);
+    border-color: #f39c12;
+    box-shadow: 0px 0px 15px 0px #f39c12;
+  }
+
+  .card-icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #f39c12;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .h5 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #3498db;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .p {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  &:hover .card-icon {
+    transform: scale(1.2) rotate(3deg);
+  }
+
+  &:hover h5 {
+    opacity: 0.8;
+  }
 }

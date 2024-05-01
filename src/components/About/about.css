@@ -62,7 +62,6 @@
 .git {
   color: var(--clr-primary);
 }
-
 .custom-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -88,41 +87,41 @@
   padding: 20px;
   border: 2px solid #3498db;
   border-radius: 15px;
-  background-color: #ecf0f1;
+  background-color: transparent; /* Set background color to transparent */
   transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-  &:hover {
-    transform: scale(1.05) rotate(3deg);
-    border-color: #f39c12;
-    box-shadow: 0px 0px 15px 0px #f39c12;
-  }
+.custom-card:hover {
+  transform: scale(1.05) rotate(3deg);
+  border-color: #f39c12;
+  box-shadow: 0px 0px 15px 0px #f39c12;
+}
 
-  .card-icon {
-    font-size: 4em;
-    margin-bottom: 20px;
-    color: #f39c12;
-    transition: transform 0.3s ease-in-out;
-  }
+.card-icon {
+  font-size: 4em;
+  margin-bottom: 20px;
+  color: var(--clr-primary); /* Use var() to set the color based on theme */
+  transition: transform 0.3s ease-in-out;
+}
 
-  .h5 {
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #3498db;
-    transition: opacity 0.3s ease-in-out;
-  }
+.h5 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--clr-txt); /* Use var() to set the color based on theme */
+  transition: opacity 0.3s ease-in-out;
+}
 
-  .p {
-    font-size: 1.3em;
-    color: #555;
-    margin-bottom: 15px;
-  }
+.p {
+  font-size: 1.3em;
+  color: var(--clr-txt); /* Use var() to set the color based on theme */
+  margin-bottom: 15px;
+}
 
-  &:hover .card-icon {
-    transform: scale(1.2) rotate(3deg);
-  }
+.custom-card:hover .card-icon {
+  transform: scale(1.2) rotate(3deg);
+}
 
-  &:hover h5 {
-    opacity: 0.8;
-  }
+.custom-card:hover h5 {
+  opacity: 0.8;
 }

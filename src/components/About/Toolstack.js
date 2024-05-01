@@ -1,10 +1,12 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { SiLaravel } from 'react-icons/si';
+import { FaAws  } from 'react-icons/fa';
 import {
   SiLinux,
   SiVisualstudiocode,
   SiPostman,
-  
+  SiFirebase,
   SiVercel,
 
   SiGithub,
@@ -14,19 +16,19 @@ function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <SiLinux />
+        <SiVisualstudiocode />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+        <SiGithub />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiPostman />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVercel />
+        <FaAws />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiGithub />
+        <SiFirebase />
       </Col>
     </Row>
   );

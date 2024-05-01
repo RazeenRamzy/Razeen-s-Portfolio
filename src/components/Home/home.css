@@ -169,11 +169,11 @@
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
-  color: #555454;
+  color: var(--clr-txt);
 }
 
 .primary-header {
-  color: #3498db;
+  color: var(--clr-txt);
   font-weight: bold;
   font-style: normal;
 }

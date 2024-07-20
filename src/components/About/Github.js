@@ -37,7 +37,7 @@ function Github() {
           <ul className="home-about-social-links" data-aos="fade-up">
             <li className="social-icons">
               <a
-                href="https://github.com/Rahuljha4171"
+                href="https://github.com/RazeenRamzy"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour  home-social-icons"
@@ -48,7 +48,7 @@ function Github() {
             </li>
             <li className="social-icons">
               <a
-                href="https://twitter.com/kumardotexe"
+                href="https://twitter.com/RazeenRamzy"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour  home-social-icons"
@@ -81,7 +81,7 @@ function Github() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/dead.programmer/"
+                href="https://www.instagram.com/razeenramzy/"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour home-social-icons"

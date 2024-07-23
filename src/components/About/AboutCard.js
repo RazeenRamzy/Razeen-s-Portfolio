@@ -6,11 +6,10 @@ import "./about.css";
 
 function AboutCards() {
   return (
-    
-      <Container className="custom-card-container">
-      <Row className="custom-card-container">
+    <Container className="custom-card-container">
+      <Row>
         {/* Card 1 - Web Development */}
-        <Col md={4} className="mb-4">
+        <Col xs={12} sm={6} lg={4} className="mb-4">
           <div className="custom-card">
             <FaCode className="card-icon" />
             <h5>Web Development</h5>
@@ -19,9 +18,8 @@ function AboutCards() {
             </p>
           </div>
         </Col>
-
         {/* Card 2 - UI/UX */}
-        <Col md={4} className="mb-4">
+        <Col xs={12} sm={6} lg={4} className="mb-4">
           <div className="custom-card">
             <FaPalette className="card-icon" />
             <h5>UI/UX Design</h5>
@@ -30,9 +28,8 @@ function AboutCards() {
             </p>
           </div>
         </Col>
-
         {/* Card 3 - App Development */}
-        <Col md={4} className="mb-4">
+        <Col xs={12} sm={6} lg={4} className="mb-4">
           <div className="custom-card">
             <FaMobileAlt className="card-icon" />
             <h5>App Development</h5>
@@ -41,9 +38,8 @@ function AboutCards() {
             </p>
           </div>
         </Col>
-
         {/* Card 4 - IoT */}
-        <Col md={4} className="mb-4">
+        <Col xs={12} sm={6} lg={4} className="mb-4">
           <div className="custom-card">
             <FaWifi className="card-icon" />
             <h5>IoT (Internet of Things)</h5>
@@ -52,9 +48,8 @@ function AboutCards() {
             </p>
           </div>
         </Col>
-
         {/* Card 5 - Cloud Computing */}
-        <Col md={4} className="mb-4">
+        <Col xs={12} sm={6} lg={4} className="mb-4">
           <div className="custom-card">
             <FaCloud className="card-icon" />
             <h5>Cloud Computing</h5>

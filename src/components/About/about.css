@@ -1,13 +1,99 @@
-
-
-
-
 .about-section {
-  position: relative !important;
-  padding-top: 50px !important;
-  padding-bottom: 30px !important;
-  background-color: var(--clr-bg) !important;
+  position: relative;
+  padding: 50px 0;
+  background-color: var(--clr-bg);
+}
 
+.custom-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.custom-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  height: auto;
+  text-align: center;
+  padding: 30px;
+  border: 2px solid var(--clr-primary);
+  border-radius: 15px;
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  border-color: #f39c12;
+  box-shadow: 0px 0px 15px 0px rgba(243, 156, 18, 0.5);
+}
+
+.card-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
+  color: var(--clr-primary);
+}
+
+.custom-card h5 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--clr-txt);
+}
+
+.custom-card p {
+  font-size: 0.9em;
+  color: var(--clr-txt);
+  margin-bottom: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 1023px) {
+  .custom-card {
+    flex: 1 1 calc(50% - 30px);
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-card {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}
+
+/* Rest of your CSS remains unchanged */
+
+/* Rest of your CSS remains unchanged */
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .custom-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .custom-card-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .tech-icons {
@@ -36,6 +122,7 @@
   display: flex;
   justify-content: center;
 }
+
 @media (max-width: 767px) {
   .tech-icons {
     margin: 10px !important;
@@ -46,13 +133,16 @@
   transform: scale(1.08) !important;
   overflow: hidden !important;
 }
+
 .tech-icon-images {
   padding: 20px !important;
   line-height: 1.6 !important;
 }
+
 .primary-header {
   color: var(--clr-primary) !important;
 }
+
 .about-activity {
   list-style: none !important;
   text-align: left !important;
@@ -61,67 +151,4 @@
 
 .git {
   color: var(--clr-primary);
-}
-.custom-card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 0px;
-  justify-content: center;
-  padding: 10px;
-  max-width: 100%;
-  margin-left: 10px; /* Update margin to 0 */
-  margin-right: 30px;
-}
-
-@media (min-width: 10px) {
-  .custom-card-container {
-    grid-template-columns: repeat(4, 1fr); /* Ensure 3 cards in a row on larger screens */
-  }
-}
-
-.custom-card {
-  text-align: center;
-  width: 280px;
-  height: 380px;
-  margin: 20px;
-  padding: 20px;
-  border: 2px solid #3498db;
-  border-radius: 15px;
-  background-color: transparent; /* Set background color to transparent */
-  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.custom-card:hover {
-  transform: scale(1.05) rotate(3deg);
-  border-color: #f39c12;
-  box-shadow: 0px 0px 15px 0px #f39c12;
-}
-
-.card-icon {
-  font-size: 4em;
-  margin-bottom: 20px;
-  color: var(--clr-primary); /* Use var() to set the color based on theme */
-  transition: transform 0.3s ease-in-out;
-}
-
-.h5 {
-  font-size: 1.8em;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: var(--clr-txt); /* Use var() to set the color based on theme */
-  transition: opacity 0.3s ease-in-out;
-}
-
-.p {
-  font-size: 1.3em;
-  color: var(--clr-txt); /* Use var() to set the color based on theme */
-  margin-bottom: 15px;
-}
-
-.custom-card:hover .card-icon {
-  transform: scale(1.2) rotate(3deg);
-}
-
-.custom-card:hover h5 {
-  opacity: 0.8;
 }

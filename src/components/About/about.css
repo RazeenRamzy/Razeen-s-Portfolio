@@ -8,18 +8,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
   padding: 20px;
-  max-width: 1400px;
+  max-width: 1800px; /* Increased the max-width */
   margin: 0 auto;
 }
 
 .custom-card {
-  flex: 1 1 300px;
-  max-width: 400px;
+  flex: 1 1 450px;
+  max-width: 450px; /* Adjusted the max-width */
   height: auto;
   text-align: center;
-  padding: 30px;
+  padding: 25px;
   border: 2px solid var(--clr-primary);
   border-radius: 15px;
   background-color: transparent;
@@ -43,56 +43,53 @@
 }
 
 .custom-card h5 {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
   margin-bottom: 10px;
   color: var(--clr-txt);
 }
 
 .custom-card p {
-  font-size: 0.9em;
+  font-size: 1em;
   color: var(--clr-txt);
   margin-bottom: 0;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1400px) {
   .custom-card {
-    flex: 1 1 calc(50% - 30px);
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 950px) {
   .custom-card {
     flex: 1 1 100%;
-    max-width: none;
+    max-width: 100%; /* Adjusted for better mobile responsiveness */
   }
 }
 
-/* Rest of your CSS remains unchanged */
-
-/* Rest of your CSS remains unchanged */
 /* Desktop styles */
 @media (min-width: 1024px) {
   .custom-card-container {
-    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between; /* Added to distribute cards evenly */
   }
 }
 
 /* Tablet styles */
 @media (min-width: 768px) and (max-width: 1023px) {
   .custom-card-container {
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; /* Added to center cards */
   }
 }
 
 /* Mobile styles */
 @media (max-width: 767px) {
   .custom-card-container {
-    grid-template-columns: 1fr;
+    justify-content: center; /* Added to center cards */
   }
 }
 

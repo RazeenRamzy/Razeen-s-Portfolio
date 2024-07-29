@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
 import { FaCode, FaPalette, FaMobileAlt, FaWifi, FaCloud } from "react-icons/fa";
+import { useSwipeable } from "react-swipeable";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./what.css";
 
-function AboutCards() {
-  const [hoveredCard, setHoveredCard] = useState(null);
+function AboutCards({ isDarkMode }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isResetting, setIsResetting] = useState(false);
 
   const cards = [
     { icon: FaCode, title: "Web Development", content: "As a developer, I specialize in crafting dynamic and responsive web applications using technologies like React.js and Node.js. I enjoy exploring tools such as Visual Studio Code, Git, and Webpack to enhance development workflows." },
@@ -15,23 +17,47 @@ function AboutCards() {
     { icon: FaCloud, title: "Cloud Computing", content: "With a focus on cloud technologies, I deploy scalable and reliable solutions using platforms like AWS and Azure. Utilizing Docker and Kubernetes, I orchestrate containerized applications for optimal performance and efficiency." },
   ];
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe("left"),
+    onSwipedRight: () => handleSwipe("right"),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true
+  });
+
+  const handleSwipe = (direction) => {
+    if (isResetting) return;
+    
+    if (currentIndex < cards.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      setIsResetting(true);
+    }
+  };
+
+  useEffect(() => {
+    if (isResetting) {
+      const timer = setTimeout(() => {
+        setCurrentIndex(0);
+        setIsResetting(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isResetting]);
+
   return (
-    <Container className="custom-card-container">
-      <Row>
-        {cards.map((card, index) => (
-          <Col key={index} xs={12} sm={6} lg={4} className="mb-4">
-            <div
-              className={`custom-card ${hoveredCard === index ? 'hovered' : ''}`}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <card.icon className="card-icon" />
-              <h5>{card.title}</h5>
-              <p>{card.content}</p>
-            </div>
-          </Col>
-        ))}
-      </Row>
+    <Container className={`card-stack-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          {...handlers}
+          className={`stacked-card ${index === currentIndex ? 'active' : ''} ${index < currentIndex ? 'swiped' : ''}`}
+          style={{ zIndex: cards.length - index }}
+        >
+          <card.icon className="card-icon" />
+          <h5>{card.title}</h5>
+          <p>{card.content}</p>
+        </div>
+      ))}
     </Container>
   );
 }

@@ -35,7 +35,7 @@ function About() {
           
         </Row>
         <h1 data-aos="fade-right">
-          <span className="primary-header">Skillset</span> I Work With
+          <span className="primary-header" >Skillset</span> I Work With
         </h1>
 
         <div data-aos="fade-up">

@@ -138,6 +138,8 @@
 
 .primary-header {
   color: var(--clr-primary) !important;
+  margin-top: 100px;
+
 }
 
 .about-activity {

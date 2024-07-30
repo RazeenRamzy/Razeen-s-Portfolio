@@ -255,6 +255,7 @@
   height: 100%;
   perspective: 1000px;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .flip-card-inner {
@@ -304,8 +305,8 @@
   align-items: center;
   margin-top:initial;
   height: 400px; /* Set a fixed height */
-  border-radius: 12px;
-  margin-top: 100px;
+  border-radius: 20px;
+  margin-top: 120px;
 }
 
 .myAvtar .flip-card {

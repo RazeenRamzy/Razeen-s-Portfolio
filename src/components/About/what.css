@@ -5,6 +5,8 @@
   max-width: 350px;
   margin: 50px auto;
   perspective: 1000px;
+  margin-bottom: 90px;
+
 }
 
 .stacked-card {

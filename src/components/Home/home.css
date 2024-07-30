@@ -160,6 +160,7 @@
   color: var(--clr-txt);
   padding-top: 20px; /* Adjust the top padding as needed */
   padding-bottom: 20px; /* Adjust the bottom padding as needed */
+  
 }
 
 .home-about-body {
@@ -248,7 +249,79 @@
 
 
 
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  cursor: pointer;
+}
 
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background-color: var(--clr-bg);
+  color: var(--clr-txt);
+}
+
+.flip-card-back {
+  background-color: var(--clr-bg);
+  color: var(--clr-txt);
+  transform: rotateY(180deg);
+}
+
+.flip-card-front img, .flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Adjust existing styles */
+.myAvtar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:initial;
+  height: 400px; /* Set a fixed height */
+  border-radius: 12px;
+  margin-top: 100px;
+}
+
+.myAvtar .flip-card {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+}
+
+.myAvtar .flip-card-inner {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.myAvtar .flip-card:hover .flip-card-inner {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
 
 
 

@@ -7,7 +7,7 @@ import "./what.css";
 
 function AboutCards({ isDarkMode }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isResetting, setIsResetting] = useState(false);
+  const [direction, setDirection] = useState(null);
 
   const cards = [
     { icon: FaCode, title: "Web Development", content: "As a developer, I specialize in crafting dynamic and responsive web applications using technologies like React.js and Node.js. I enjoy exploring tools such as Visual Studio Code, Git, and Webpack to enhance development workflows." },
@@ -24,25 +24,21 @@ function AboutCards({ isDarkMode }) {
     trackMouse: true
   });
 
-  const handleSwipe = (direction) => {
-    if (isResetting) return;
-    
-    if (currentIndex < cards.length - 1) {
+  const handleSwipe = (swipeDirection) => {
+    setDirection(swipeDirection);
+    if (swipeDirection === "left" && currentIndex < cards.length - 1) {
       setCurrentIndex(currentIndex + 1);
-    } else {
-      setIsResetting(true);
+    } else if (swipeDirection === "right" && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
     }
   };
 
   useEffect(() => {
-    if (isResetting) {
-      const timer = setTimeout(() => {
-        setCurrentIndex(0);
-        setIsResetting(false);
-      }, 300);
-      return () => clearTimeout(timer);
-    }
-  }, [isResetting]);
+    const timer = setTimeout(() => {
+      setDirection(null);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [currentIndex]);
 
   return (
     <Container className={`card-stack-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
@@ -50,8 +46,13 @@ function AboutCards({ isDarkMode }) {
         <div
           key={index}
           {...handlers}
-          className={`stacked-card ${index === currentIndex ? 'active' : ''} ${index < currentIndex ? 'swiped' : ''}`}
-          style={{ zIndex: cards.length - index }}
+          className={`stacked-card ${index === currentIndex ? 'active' : ''} 
+            ${direction === 'left' && index === currentIndex - 1 ? 'swiped-left' : ''}
+            ${direction === 'right' && index === currentIndex + 1 ? 'swiped-right' : ''}`}
+          style={{ 
+            zIndex: cards.length - Math.abs(index - currentIndex),
+            transform: `translateY(${(index - currentIndex) * 10}px) rotate(${(index - currentIndex) * 2}deg)`
+          }}
         >
           <card.icon className="card-icon" />
           <h5>{card.title}</h5>

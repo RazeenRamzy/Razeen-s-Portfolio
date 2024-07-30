@@ -1,8 +1,10 @@
 .card-stack-container {
   position: relative;
   height: 400px;
-  width: 300px;
+  width: 90%;
+  max-width: 350px;
   margin: 50px auto;
+  perspective: 1000px;
 }
 
 .stacked-card {
@@ -11,8 +13,12 @@
   height: 100%;
   border-radius: 10px;
   padding: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.6s ease;
   cursor: grab;
+  backface-visibility: hidden;
+  overflow: hidden;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .light-mode .stacked-card {
@@ -28,11 +34,18 @@
 }
 
 .stacked-card.active {
-  transform: translateY(-10px) rotate(0deg);
+  transform: translateY(0) rotate(0deg) !important;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.stacked-card.swiped {
-  transform: translateX(120%) rotate(20deg);
+.stacked-card.swiped-left {
+  transform: translateX(-120%) rotate(-20deg) !important;
+  opacity: 0;
+}
+
+.stacked-card.swiped-right {
+  transform: translateX(120%) rotate(20deg) !important;
   opacity: 0;
 }
 
@@ -43,8 +56,41 @@
 
 .stacked-card h5 {
   margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
 .stacked-card p {
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .card-stack-container {
+    height: 350px;
+  }
+
+  .stacked-card h5 {
+    font-size: 1rem;
+  }
+
+  .stacked-card p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-stack-container {
+    height: 300px;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+  }
+
+  .stacked-card h5 {
+    font-size: 0.9rem;
+  }
+
+  .stacked-card p {
+    font-size: 0.7rem;
+  }
 }

@@ -1,31 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/bk-img4.png";
-import Tilt from "react-parallax-tilt";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-  AiOutlineMail,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import myImgBack from "../../Assets/bk-img-back.jpg"; // Add your back image
 
 function Home2() {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
-      
           <Col md={8} className="home-about-description">
-          <h1 style={{ fontSize: "2.6em" }} data-aos="fade-right">
+            <h1 style={{ fontSize: "2.6em" }} data-aos="fade-right">
               <span className="primary-header"> About Me </span>
             </h1>
             <p className="home-about-body" data-aos="fade-up">
               <br />
               Hi there! I'm a <i className="primary-header">
-                Software Engineer 
+                Software Engineer
               </i>{" "}
-               who's all about making the impossible, possible.
+              who's all about making the impossible, possible.
               <br />
               <br />I thrive on challenges, and there's nothing I love more than diving into the latest <i className="primary-header">tech innovations</i> to create something extraordinary.
               <br />
@@ -36,20 +34,33 @@ function Home2() {
               <br />
               Always upping my game, I'm on a mission to push boundaries, innovate relentlessly, and sprinkle a little magic wherever I go.
             </p>
-
           </Col>
           <Col md={4} className="myAvtar">
-              <img
-                data-aos="fade-left"
-                src={myImg}
-                className="img-fluid"
-                alt="avatar"
-              />
+            <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <img
+                    data-aos="fade-left"
+                    src={myImg}
+                    className="img-fluid"
+                    alt="avatar"
+                  />
+                </div>
+                <div className="flip-card-back">
+                  <img
+                    data-aos="fade-left"
+                    src={myImgBack}
+                    className="img-fluid"
+                    alt="avatar back"
+                  />
+                </div>
+              </div>
+            </div>
           </Col>
         </Row>
-      
       </Container>
     </Container>
   );
 }
+
 export default Home2;
